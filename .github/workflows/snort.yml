@@ -30,6 +30,10 @@ jobs:
         run: |
           sudo apt-get install -y libboost-all-dev
 
+      - name: Install Ragel
+        run: |
+          sudo apt-get install -y ragel
+
       - name: Install Hyperscan
         run: |
           git clone https://github.com/intel/hyperscan.git
