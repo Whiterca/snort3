@@ -56,7 +56,7 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          cmake .. -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=arm -DCMAKE_C_COMPILER=arm-linux-gnueabihf-gcc -DCMAKE_CXX_COMPILER=arm-linux-gnueabihf-g++ -DDNET_INCLUDE_DIR=/usr/include -DDNET_LIBRARIES=/usr/lib/arm-linux-gnueabihf/libdnet.so -DLUAJIT_INCLUDE_DIR=/usr/include/luajit-2.1 -DLUAJIT_LIBRARIES=/usr/lib/arm-linux-gnueabihf/libluajit-5.1.so -DPCAP_INCLUDE_DIR=/usr/include -DPCAP_LIBRARIES=/usr/lib/arm-linux-gnueabihf/libpcap.so -DZLIB_INCLUDE_DIR=/usr/include -DZLIB_LIBRARY=/usr/lib/arm-linux-gnueabihf/libz.so
+          cmake .. -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=arm -DCMAKE_C_COMPILER=arm-linux-gnueabihf-gcc -DCMAKE_CXX_COMPILER=arm-linux-gnueabihf-g++ -DDNET_INCLUDE_DIR=/usr/include -DDNET_LIBRARIES=/usr/lib/arm-linux-gnueabihf/libdnet.so -DLUAJIT_INCLUDE_DIR=/usr/include/luajit-2.1 -DLUAJIT_LIBRARIES=/usr/lib/arm-linux-gnueabihf/libluajit-5.1.so -DPCAP_INCLUDE_DIR=/usr/include -DPCAP_LIBRARIES=/usr/lib/arm-linux-gnueabihf/libpcap.so -DZLIB_INCLUDE_DIR=/usr/include -DZLIB_LIBRARY=/usr/lib/arm-linux-gnueabihf/libz.so -DLIBLZMA_LIBRARY=/usr/lib/arm-linux-gnueabihf/liblzma.so
           make
 
       - name: List files in the build directory
