@@ -24,7 +24,16 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install -y cmake libpcap-dev libpcre3-dev zlib1g-dev bison flex libfl-dev libdnet-dev libhwloc-dev luajit libluajit-5.1-dev
-          sudo apt-get install -y liblzma-dev libsafec-dev libhs-dev libnuma-dev libunwind-dev
+          sudo apt-get install -y liblzma-dev libsafec-dev libnuma-dev libunwind-dev
+
+      - name: Install Hyperscan
+        run: |
+          git clone https://github.com/intel/hyperscan.git
+          cd hyperscan
+          mkdir build && cd build
+          cmake -DCMAKE_BUILD_TYPE=Release ..
+          make
+          sudo make install
 
       - name: Install libdaq
         run: |
