@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get install -y cmake libpcap-dev libpcre3-dev zlib1g-dev bison flex libfl-dev
+          sudo apt-get install -y cmake libpcap-dev libpcre3-dev zlib1g-dev bison flex libfl-dev libdnet-dev
 
       - name: Install libdaq
         run: |
@@ -38,7 +38,7 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          cmake .. -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=arm -DCMAKE_C_COMPILER=arm-linux-gnueabihf-gcc -DCMAKE_CXX_COMPILER=arm-linux-gnueabihf-g++
+          cmake .. -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=arm -DCMAKE_C_COMPILER=arm-linux-gnueabihf-gcc -DCMAKE_CXX_COMPILER=arm-linux-gnueabihf-g++ -DDNET_INCLUDE_DIR=/usr/include -DDNET_LIBRARIES=/usr/lib/arm-linux-gnueabihf/libdnet.so
           make
 
       - name: List files in the build directory
